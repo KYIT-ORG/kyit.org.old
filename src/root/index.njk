@@ -1,0 +1,14 @@
+---
+permalink: /
+eleventyExcludeFromCollections: true
+---
+
+{% highlight "js" %}
+function hi_there() {
+  return 'Welcome to KYIT.org'
+}
+{% endhighlight %}
+
+{% from 'macros.njk' import loopC %}
+
+{{ loopC(collections.t1) }}

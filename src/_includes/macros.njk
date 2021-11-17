@@ -1,0 +1,27 @@
+{% macro loopC(c) %}
+
+    {% for post in c | reverse %}
+
+        <a href="{{ post.filePathStem | replace('/posts', '') | replace('/index', '') }}">
+
+            <div class="card">
+
+                <h3>
+                    {% if post.data.title %}
+                        {{ post.data.title }}
+                    {% else %}
+                        {{ post.fileSlug | replace("-", " ") | capitalize }}
+                    {% endif %}
+
+                    {# <span style="color: salmon; font-size: .5rem; float: right">
+                        {{ post.date | postDate }}
+                    </span>     #}
+                </h3>
+
+            </div>
+            
+        </a>
+
+    {% endfor %}
+
+{% endmacro %}
