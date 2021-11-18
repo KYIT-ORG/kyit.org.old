@@ -1,0 +1,29 @@
+
+.link-tag {
+    position: relative;
+    padding: 3rem;
+    margin: 3rem;
+    text-align: center;
+    background-color: rgba(0,0,0,.7);
+
+}
+.link-tag::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    top: -1px;
+    bottom: -1px;
+    height: calc(100% + 2px);
+    border-width: .1rem 0 0;
+    border-style: solid;
+    border-image: linear-gradient(35deg, var(--gradient)) 1;
+}
+
+.link-tag:hover::before {
+    border-width: .2rem;
+}
+
+.link-tag-date {
+    font-size: .7rem;
+}

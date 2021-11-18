@@ -4,20 +4,19 @@
 
         <a href="{{ post.filePathStem | replace('/posts', '') | replace('/index', '') }}">
 
-            <div class="card">
+            <div class="link-tag">
 
-                <h3>
+                <h2>
                     {% if post.data.title %}
                         {{ post.data.title }}
                     {% else %}
                         {{ post.fileSlug | replace("-", " ") | capitalize }}
                     {% endif %}
+                </h2>   
 
-                    {# <span style="color: salmon; font-size: .5rem; float: right">
-                        {{ post.date | postDate }}
-                    </span>     #}
-                </h3>
-
+                <span class="link-tag-date">
+                    {{ post.date | postDate }}
+                </span>    
             </div>
             
         </a>

@@ -7,12 +7,42 @@
 
     <title>{{ title }}</title>
 
-    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
-
+    {% set css %}
+        {% include 'css/reset.css' %}
+        {% include 'css/font.css' %}
+        {% include 'css/layout.css' %}
+        {% include 'css/component.css' %}
+        {% include 'css/holi.css' %}
+        {% include 'css/media.css' %}
+    {% endset %}
+    <style>
+        {{ css | cssmin | safe }}
+    </style>
 </head>
 <body>
     
-    {{ content | safe }}
+    <header><a href="/">Know Your IT</a></header>
+    
+    {% if page.url !== '/'%}
+        <nav>
+            {% set breadcrumbs = '/' %}
 
+            <a href="{{ breadcrumbs }}">home</a>
+
+            {% for i in (page.url | parseURL) %}
+
+                    {% set breadcrumbs = breadcrumbs + i + '/' %}
+                    
+                    -> <a href="{{ breadcrumbs }}">{{ i }}</a>
+
+            {% endfor %}
+        </nav>    
+    {% endif %}
+    
+    <main>
+        {{ content | safe }}
+    </main>
+
+    <footer> &copy; 2021 KYIT.org</footer>
 </body>
 </html>

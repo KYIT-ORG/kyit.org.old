@@ -1,0 +1,41 @@
+body {
+	min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+	font-family: sans-serif;
+    display: flex;
+	flex-direction: column;
+	
+	color: rgba(201, 218, 241, 1);
+	color: rgba(223, 233, 247, 1);
+	background-color: rgb(26, 53, 91);
+
+}
+
+main {
+	flex-grow: 1;
+	margin: 1rem 0;
+}
+
+nav a {
+	color: springgreen;
+}
+
+header {
+	font-weight: 900;
+	font-style: italic;
+	color: #fff;
+}
+
+footer {
+	text-align: center;
+	font-weight: 900;
+}
+
+header, footer {
+	background-color: rgba(0,0,0,.5);
+}
+
+header, footer, main, nav {
+	padding: .5rem 1rem;
+}
